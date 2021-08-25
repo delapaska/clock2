@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         var date1 = DateTimeFormatter.ofPattern("HH:mm:ss")
         var now= LocalDateTime.now()
-        var time1 = dtf.format(now)
+        var time1 = date1.format(now)
 
         textView3.text = time1.toString()
 
