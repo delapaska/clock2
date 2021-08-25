@@ -29,6 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        textView3.text = getCurrentTime()
+        tv_current_time.text = getCurrentTime()
     }
 }
