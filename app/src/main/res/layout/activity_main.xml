@@ -8,25 +8,59 @@
 
     <TextView
         android:id="@+id/tv_current_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:layout_marginBottom="466dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_update"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="296dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        style="@style/MyBtn"
         android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="524dp"
-        android:layout_marginEnd="161dp"
         android:text="Обновить"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
+
+    <Button
+        android:id="@+id/actvt"
+        android:layout_width="129dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="228dp"
+        android:text="Linear Activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <Button
+        android:id="@+id/rlative_btn"
+        android:layout_width="122dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="Relative Activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actvt"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <Button
+        android:id="@+id/scrl_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="54dp"
+        android:text="scroll activity"
+        app:layout_constraintStart_toEndOf="@+id/actvt"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

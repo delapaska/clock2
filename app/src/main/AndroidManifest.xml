@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Clock2">
         <activity
+            android:name=".Recycle"
+            android:exported="true" />
+        <activity
+            android:name=".Scroll"
+            android:exported="true" />
+        <activity
+            android:name=".Relative"
+            android:exported="true" />
+        <activity
+            android:name=".Relative_Activity1"
+            android:exported="true" />
+        <activity
+            android:name=".actvt2"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
