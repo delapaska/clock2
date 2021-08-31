@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Clock2">
         <activity
-            android:name=".Recycle"
+            android:name=".RecyclerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".Scroll"
+            android:name=".ScrollViewActivity"
             android:exported="true" />
         <activity
-            android:name=".Relative"
+            android:name=".RelativeLayoutActivity"
             android:exported="true" />
         <activity
             android:name=".Relative_Activity1"
             android:exported="true" />
         <activity
-            android:name=".actvt2"
+            android:name=".SecondActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -9,9 +9,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mUpdateButton: Button
-    private lateinit var mActvtBtn:Button
-    private lateinit var mRltiveBtn:Button
-    private lateinit var mScrlBtn:Button
+    private lateinit var mActvtBtn: Button
+    private lateinit var mRelativeButton: Button
+    private lateinit var mScrollButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,25 +21,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        mScrlBtn = findViewById(R.id.scrl_btn)
-        with(mScrlBtn){
-            setOnClickListener { Scrl() }
+        mScrollButton = findViewById(R.id.scrl_btn)
+        with(mScrollButton) {
+            setOnClickListener { openScrollViewActivity() }
         }
-        mRltiveBtn = findViewById(R.id.rlative_btn)
-        with(mRltiveBtn){
-            setOnClickListener {Rlative()  }
+        mRelativeButton = findViewById(R.id.rlative_btn)
+        with(mRelativeButton) {
+            setOnClickListener { openRelativeActivity() }
         }
         mUpdateButton = findViewById(R.id.btn_update)
         with(mUpdateButton) {
             setOnClickListener { updateUI() }
         }
-        mActvtBtn =findViewById(R.id.actvt)
-        with(mActvtBtn){
-            setOnClickListener { actvtbtn() }
+        mActvtBtn = findViewById(R.id.actvt)
+        with(mActvtBtn) {
+            setOnClickListener { openSecondActivity() }
         }
     }
 
-    private fun getCurrentTime() : String {
+    private fun getCurrentTime(): String {
         val timestamp = System.currentTimeMillis()
         return convertMillisToTime(timestamp, PATTERN_HOUR_MINUTE_SECOND)
     }
@@ -47,16 +47,19 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI() {
         tv_current_time.text = getCurrentTime()
     }
-   private fun actvtbtn(){
-                val intent = Intent(this,actvt2::class.java)
-                startActivity(intent)
-    }
-    fun Rlative(){
-        val intent = Intent(this,Relative::class.java)
+
+    private fun openSecondActivity() {
+        val intent = Intent(this, SecondActivity::class.java)
         startActivity(intent)
     }
-    private fun Scrl(){
-        val intent = Intent(this,Scroll::class.java)
+
+    private fun openRelativeActivity() {
+        val intent = Intent(this, RelativeLayoutActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openScrollViewActivity() {
+        val intent = Intent(this, ScrollViewActivity::class.java)
         startActivity(intent)
     }
 }
