@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        style="@style/MyBtn"
+        style="@style/PrimaryButton"
         android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
