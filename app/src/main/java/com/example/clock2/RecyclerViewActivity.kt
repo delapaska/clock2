@@ -6,6 +6,6 @@ import android.os.Bundle
 class RecyclerViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycle2)
+        setContentView(R.layout.activity_recycle)
     }
 }

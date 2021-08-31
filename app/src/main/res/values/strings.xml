@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">clock2</string>
+    <string name="action_go_back">Вернуться назад</string>
 </resources>

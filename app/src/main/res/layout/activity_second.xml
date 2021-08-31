@@ -10,13 +10,13 @@
         android:id="@+id/btn_back"
         android:layout_width="match_parent"
         android:layout_height="79dp"
-        android:text="Button" />
+        android:text="@string/action_go_back" />
 
     <TextView
         style="@style/MyTxt"
-        android:id="@+id/textView2"
+        android:id="@+id/tv_go_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Вернуться назад" />
+        android:text="@string/action_go_back" />
 
 </LinearLayout>

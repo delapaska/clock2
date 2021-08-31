@@ -3,39 +3,34 @@ package com.example.clock2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.clock2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mUpdateButton: Button
-    private lateinit var mActvtBtn: Button
-    private lateinit var mRelativeButton: Button
-    private lateinit var mScrollButton: Button
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initViews()
         updateUI()
     }
 
     private fun initViews() {
-        mScrollButton = findViewById(R.id.scrl_btn)
-        with(mScrollButton) {
-            setOnClickListener { openScrollViewActivity() }
-        }
-        mRelativeButton = findViewById(R.id.rlative_btn)
-        with(mRelativeButton) {
-            setOnClickListener { openRelativeActivity() }
-        }
-        mUpdateButton = findViewById(R.id.btn_update)
-        with(mUpdateButton) {
-            setOnClickListener { updateUI() }
-        }
-        mActvtBtn = findViewById(R.id.actvt)
-        with(mActvtBtn) {
-            setOnClickListener { openSecondActivity() }
+        with(binding) {
+            with(scrlBtn) {
+                setOnClickListener { openScrollViewActivity() }
+            }
+            with(rlativeBtn) {
+                setOnClickListener { openRelativeActivity() }
+            }
+            with(btnUpdate) {
+                setOnClickListener { updateUI() }
+            }
+            with(actvt) {
+                setOnClickListener { openSecondActivity() }
+            }
         }
     }
 
@@ -45,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        tv_current_time.text = getCurrentTime()
+        binding.tvCurrentTime.text = getCurrentTime()
     }
 
     private fun openSecondActivity() {
