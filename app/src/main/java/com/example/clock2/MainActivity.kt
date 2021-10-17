@@ -19,17 +19,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         with(binding) {
-            with(scrlBtn) {
-                setOnClickListener { openScrollViewActivity() }
-            }
-            with(rlativeBtn) {
-                setOnClickListener { openRelativeActivity() }
-            }
             with(btnUpdate) {
                 setOnClickListener { updateUI() }
             }
-            with(actvt) {
-                setOnClickListener { openSecondActivity() }
+            with(gpsButton) {
+                setOnClickListener { openGpsActivity() }
             }
         }
     }
@@ -43,18 +37,10 @@ class MainActivity : AppCompatActivity() {
         binding.tvCurrentTime.text = getCurrentTime()
     }
 
-    private fun openSecondActivity() {
-        val intent = Intent(this, SecondActivity::class.java)
+    private fun openGpsActivity() {
+        val intent = Intent(this, GpsCoordActivity::class.java)
         startActivity(intent)
     }
 
-    private fun openRelativeActivity() {
-        val intent = Intent(this, RelativeLayoutActivity::class.java)
-        startActivity(intent)
-    }
 
-    private fun openScrollViewActivity() {
-        val intent = Intent(this, ScrollViewActivity::class.java)
-        startActivity(intent)
-    }
 }
