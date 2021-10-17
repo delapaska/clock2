@@ -1,34 +1,46 @@
 package com.example.clock2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.clock2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mUpdateButton: Button
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initViews()
         updateUI()
     }
 
     private fun initViews() {
-        mUpdateButton = findViewById(R.id.btn_update)
-        with(mUpdateButton) {
-            setOnClickListener { updateUI() }
+        with(binding) {
+            with(btnUpdate) {
+                setOnClickListener { updateUI() }
+            }
+            with(gpsButton) {
+                setOnClickListener { openGpsActivity() }
+            }
         }
     }
 
-    private fun getCurrentTime() : String {
+    private fun getCurrentTime(): String {
         val timestamp = System.currentTimeMillis()
         return convertMillisToTime(timestamp, PATTERN_HOUR_MINUTE_SECOND)
     }
 
     private fun updateUI() {
-        textView3.text = getCurrentTime()
+        binding.tvCurrentTime.text = getCurrentTime()
     }
+
+    private fun openGpsActivity() {
+        val intent = Intent(this, GpsCoordActivity::class.java)
+        startActivity(intent)
+    }
+
+
 }
